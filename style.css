@@ -1,0 +1,32 @@
+body{
+    text-align: center;
+    
+}
+main{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: black;
+    height: 500px;
+    
+}
+.player1{
+    display: grid;
+
+    border: 10px solid pink;
+    background-color: bisque;
+}
+.player2{
+    display: grid;
+    border: 10px solid green;
+    background-color: blue;
+}
+input{
+    display: grid;
+    color: blue;
+    margin: auto;
+    width: 50%;
+    height: 70px;
+    font-size: larger;
+    margin-top: 10px;
+    
+}
