@@ -98,6 +98,21 @@ fetch(`${BASE}${tempDeck}${shuffle}`)
             draw1butt.setAttribute("type","submit")
             draw1butt.setAttribute("value","Draw Player 1")
             
+            draw1butt.addEventListener('click',(event)=> {
+                event.preventDefault()
+                // this appends the values of the stored results in player 1 when the draw button is clicked.
+                let card = document.createElement("img")
+                card.setAttribute('src',`${drawnImages[0]}` )
+                card.setAttribute('alt',`player1card`)
+                
+                drawnImages.shift()
+                drawnValues.shift()
+            
+            
+                player1.append(card)
+            
+            })
+            
         //create draw player two button
             const draw2 = document.createElement('form')
             const draw2butt = document.createElement('input')
@@ -105,6 +120,23 @@ fetch(`${BASE}${tempDeck}${shuffle}`)
             draw2butt.setAttribute("type","submit")
             draw2butt.setAttribute("value","Draw Player 2")
             
+    draw2butt.addEventListener('click',(event)=> {
+        event.preventDefault()
+        // this appends the values of the stored results in player 1 when the draw button is clicked.
+        
+        // console.log(drawnImages[0])
+        let card = document.createElement("img")
+        card.setAttribute('src',`${drawnImages[0]}` )
+        card.setAttribute('alt',`player2card`)
+        
+        drawnImages.shift()
+        drawnValues.shift()
+    
+    
+        player2.append(card)
+    
+        // first thought, store the value of the pile on the site and reference that , but i may not have to . once i have the code of the card, i can use the value?
+    })   
 
             draw1.append(draw1butt)
             draw2.append(draw2butt)
@@ -118,11 +150,38 @@ fetch(`${BASE}${tempDeck}${shuffle}`)
     .catch((error)=>console.log(error))
 
     
+    
 })
 
+// const d1 = document.querySelector('draw1button')
+// const d2 = document.querySelector('draw2button')
+
+// d1.addEventListener('click',(event)=> {
+//     event.preventDefault()
+//     // this appends the values of the stored results in player 1 when the draw button is clicked.
+//     player1.append(drawnValues[0],drawnImages[0])
+    
+//     //this removes the first element so when i click the d2 button, the first result changes
+//     drawnImages.shift()
+//     drawnValues.shift()
+
+// })
+
+// d2.addEventListener('click',(event)=> {
+//     event.preventDefault()
+//     // this appends the values of the stored results in player 1 when the draw button is clicked.
+//     let card = document.createElement("img")
+//     card.setAttribute('src',`${drawnImages[0]}` )
+//     card.setAttribute('alt',`player2card`)
+    
+//     drawnImages.shift()
+//     drawnValues.shift()
 
 
+//     player2.append(drawnValues[0])
 
+//     // first thought, store the value of the pile on the site and reference that , but i may not have to . once i have the code of the card, i can use the value?
+// })
 
 // get new eck and Deck ID, changes deck ID on global scope
 // fetch(URl)
