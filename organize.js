@@ -8,12 +8,6 @@ const BASE = "https://deckofcardsapi.com/api/deck/"
 // draw first cards using the deck id
 const firstDraw = `/draw/?count=4`
 
-// link to add card to player 1 pile
-const player1Pile = `/pile/player1/add/?cards=AS,2S `
-
-// link to add card to player 2 pile
-const Player2Pile = `/pile/player2/add/?cards=AS,2S `
-
 // link to shuffle when user wants to start new game with same deck . 
 const shuffle = `/shuffle/`
 
@@ -24,6 +18,13 @@ const player1 = document.querySelector(".player1")
 const player2 = document.querySelector(".player2")
 
 const newGame = document.querySelector("#newGame")
+
+const p1name = document.querySelector('#p1name')
+const p2name = document.querySelector('#p2name')
+
+const nameOne = document.querySelector('#nameOne')
+const nameTwo = document.querySelector('#nameTwo')
+
 
 let drawnImages = []
 let drawnValues = []
@@ -36,6 +37,7 @@ newGame.addEventListener(("submit"), (event)=>{
 // console.log(`${BASE}${deckID}${firstDraw}`)
 
 // this fetch adds aces to junk pile
+
 fetch(`${BASE}${tempDeck}${shuffle}`)
     
     .then((res1) => res1.json())
@@ -81,4 +83,29 @@ fetch(`${BASE}${tempDeck}${shuffle}`)
         })
     .catch((error)=>console.log(error))   
     })
+
+
+p1name.addEventListener(("submit"),(event)=>{
+        event.preventDefault()
+        console.log("anything")
+        const h2 = document.createElement('h2')
+        h2.innerText = nameOne.value
+            console.log(nameOne.value)
+        player1.innerHTML = ""
+        player1.append(h2)
+    p2name.removeAttribute("hidden")
+    })
+
+p2name.addEventListener(("submit"),(event)=>{
+    event.preventDefault()
+    console.log("anything")
+    const h2 = document.createElement('h2')
+    h2.innerText = nameTwo.value
+        console.log(nameTwo.value)
+    player2.innerHTML = ""
+    player2.append(h2)
+    newGame.removeAttribute("hidden")
+})    
+
+
 

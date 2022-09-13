@@ -17,15 +17,17 @@
 
         <!-- aside with class of player1 to store player one data -->
         <aside class="player1">
-            <form action="input">
-                <input type="text" value="Enter Player 2">
+            <form id="p1name">
+                <input type="text"  placeholder="Enter Player 1" id="nameOne">
+                <input type="submit">
             </form>
         </aside>
 
 <!-- aside with class of player1 to store player one data -->
         <aside class="player2">
-            <form action="input">
-                <input type="text" value="Enter Player 2">
+            <form id="p2name" hidden="true" >
+                <input type="text" value="" placeholder="Enter Player 2" id="nameTwo"> 
+                <input type="submit" >
             </form>
 
         </aside>
@@ -33,7 +35,7 @@
     </main>
 
     <!-- New Game Button -->
-        <form id="newGame">
+        <form id="newGame" hidden>
             <input type="submit" value="New Game">
         </form>
 </body>

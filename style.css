@@ -16,12 +16,14 @@ main{
     width: auto;
     border: 10px solid pink;
     background-color: bisque;
+    color: turquoise;
 }
 .player2{
     display: inline;
     border: 10px solid green;
     background-color: blue;
     width: auto;
+    color: rgb(183, 12, 183);
 }
 #newGame input{
     display: grid;
@@ -38,3 +40,4 @@ img{
     height: 314px;
     width: 226px;
 }
+
