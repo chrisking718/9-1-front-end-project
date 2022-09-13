@@ -25,8 +25,13 @@ const p2name = document.querySelector('#p2name')
 const nameOne = document.querySelector('#nameOne')
 const nameTwo = document.querySelector('#nameTwo')
 
+const body = document.querySelector('body')
+
+const winnerBox = document.querySelector('.winnerBox')
 let newGameCount = 0
 
+let player1Pile = 0
+let player2Pile = 0
 
 let drawnImages = []
 let drawnValues = []
@@ -42,7 +47,13 @@ newGame.addEventListener(("submit"), (event)=>{
     }
 // console.log(`${BASE}${deckID}${firstDraw}`)
 
+setTimeout(addTotalButton,10000)
+
+alert("Click on Card to See What You Got!")
+
+
 // this fetch adds aces to junk pile
+
 
 fetch(`${BASE}${tempDeck}${shuffle}`)
     
@@ -88,30 +99,144 @@ fetch(`${BASE}${tempDeck}${shuffle}`)
             .catch((error) => console.log(error))
         })
     .catch((error)=>console.log(error))   
-    })
+
+    
+    
+})
 
 
 p1name.addEventListener(("submit"),(event)=>{
         event.preventDefault()
-        console.log("anything")
+        console.log("anything1")
+    if(nameOne.value.length<1){
+         alert("Enter a Valid Name")
+         
+    }else{
+        
         const h2 = document.createElement('h2')
         h2.innerText = nameOne.value
-            console.log(nameOne.value)
+            //console.log(nameOne.value)
         player1.innerHTML = ""
         player1.append(h2)
-    p2name.removeAttribute("hidden")
-    })
+        p2name.removeAttribute("hidden")
+    }
+    
+})
 
 p2name.addEventListener(("submit"),(event)=>{
     event.preventDefault()
     console.log("anything")
+   
+    if(nameTwo.value.length<1){
+        alert("Enter a Valid Name")
+    }else{
+    
     const h2 = document.createElement('h2')
     h2.innerText = nameTwo.value
         console.log(nameTwo.value)
     player2.innerHTML = ""
     player2.append(h2)
     newGame.removeAttribute("hidden")
+    }
 })    
 
+// adds total button to bottom of screen, hides new game button
+const addScore = document.createElement("input")
+
+function addTotalButton(){
+    
+    addScore.setAttribute("type","submit")
+    addScore.setAttribute('value',"Add Total")
+    addScore.setAttribute("id","addTotal")
+   newGame.setAttribute("hidden","true")
+        body.append(addScore)
+}
+// gives the users time to enter their name, click new game, and flip all the cards. before add total button appears no spoilers lol.
+//setTimeout(addTotalButton,10000)
+
+// adds the total of all the values for the respectful player. accounts for all values.
+function addTotal(){
+    if(drawnValues[0]=== "KING" ||drawnValues[0]=== "JACK"||drawnValues[0]=== "QUEEN"){
+
+        player1Pile += 10
+    }else if(drawnValues[0]=== "ACE"){
+
+        player1Pile += 11
+    }else{
+        player1Pile += Number(drawnValues[0])
+    }
 
 
+
+
+    if(drawnValues[2]=== "KING" ||drawnValues[2]=== "JACK"||drawnValues[2]=== "QUEEN"){
+
+        player1Pile += 10
+    }else if(drawnValues[2]=== "ACE"){
+
+        player1Pile += 11
+    }else{
+        player1Pile += Number(drawnValues[2])
+    }
+
+
+
+
+    if(drawnValues[1]=== "KING" ||drawnValues[1]=== "JACK"||drawnValues[1]=== "QUEEN"){
+
+        player2Pile += 10
+    }else if(drawnValues[1]=== "ACE"){
+
+        player2Pile += 11
+    }else{
+        player2Pile += Number(drawnValues[1])
+    }
+
+
+
+    if(drawnValues[3]=== "KING" ||drawnValues[3]=== "JACK"||drawnValues[3]=== "QUEEN"){
+
+        player2Pile += 10
+    }else if(drawnValues[3]=== "ACE"){
+
+        player2Pile += 11
+    }else{
+        player2Pile += Number(drawnValues[3])
+    }
+    
+console.log(`Player 1 Score: ${player1Pile}`)
+console.log(`Player 2 Score: ${player2Pile}`)
+
+const p1Score  = document.createElement('h3')
+const p2Score  = document.createElement('h3')
+
+p1Score.innerText = player1Pile
+p2Score.innerText = player2Pile
+
+player1.appendChild(p1Score)
+player2.appendChild(p2Score)
+
+
+}
+
+
+// when you click add score, the new game button will re appear and the add score button will disappear. 
+addScore.addEventListener("click",(event)=>{
+    addTotal()
+    newGame.removeAttribute("hidden")
+    addScore.setAttribute("hidden","true")
+    setTimeout(addWinnerBox,5000)
+})
+
+
+function addWinnerBox(){
+
+    winnerBox.removeAttribute("hidden")
+     if(player1Pile > player2Pile){
+            winnerBox.innerText= `Winner: ${nameOne.value}`
+        }else if(player2Pile > player1Pile){
+            winnerBox.innerText= `Winner: ${nameTwo.value}`
+     }else{winnerBox.innerText = `It's a Tie!`}
+}
+
+//setTimeout(addWinnerBox,10000)

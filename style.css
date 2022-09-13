@@ -17,6 +17,7 @@ main{
     border: 10px solid pink;
     background-color: bisque;
     color: turquoise;
+    text-transform: uppercase;
 }
 .player2{
     display: inline;
@@ -24,6 +25,7 @@ main{
     background-color: blue;
     width: auto;
     color: rgb(183, 12, 183);
+    text-transform: uppercase;
 }
 #newGame input{
     display: grid;
@@ -41,3 +43,33 @@ img{
     width: 226px;
 }
 
+h3{
+    border: 7px solid silver;
+    background: black;
+    width: 60px;
+    margin: auto;
+    font-size:x-large;
+}
+
+#addTotal{
+    width: 50%;
+    margin: auto;
+    font-size: x-large;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.winnerBox{
+    display: grid;
+
+   
+    width: 60%;
+    margin: auto;
+    font-size:xx-large;
+    font-weight: bolder;
+    text-transform: uppercase;
+    justify-content: center;
+    color: purple;
+    margin-bottom: 10px;
+    margin-top: -55px;
+}
