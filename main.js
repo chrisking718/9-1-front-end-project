@@ -110,38 +110,38 @@ fetch(`${BASE}${tempDeck}${shuffle}`)
             
             
                 player1.append(card)
-            
+                
             })
             
-        //create draw player two button
-            const draw2 = document.createElement('form')
-            const draw2butt = document.createElement('input')
+        // //create draw player two button
+        //     const draw2 = document.createElement('form')
+        //     const draw2butt = document.createElement('input')
 
-            draw2butt.setAttribute("type","submit")
-            draw2butt.setAttribute("value","Draw Player 2")
+        //     draw2butt.setAttribute("type","submit")
+        //     draw2butt.setAttribute("value","Draw Player 2")
             
-    draw2butt.addEventListener('click',(event)=> {
-        event.preventDefault()
-        // this appends the values of the stored results in player 1 when the draw button is clicked.
-        
-        // console.log(drawnImages[0])
-        let card = document.createElement("img")
-        card.setAttribute('src',`${drawnImages[0]}` )
-        card.setAttribute('alt',`player2card`)
-        
-        drawnImages.shift()
-        drawnValues.shift()
-    
-    
-        player2.append(card)
-    
-        // first thought, store the value of the pile on the site and reference that , but i may not have to . once i have the code of the card, i can use the value?
-    })   
+        // draw2butt.addEventListener('click',(event)=> {
+        //         event.preventDefault()
+        //         // this appends the values of the stored results in player 1 when the draw button is clicked.
+                
+        //         // console.log(drawnImages[0])
+        //         let card = document.createElement("img")
+        //         card.setAttribute('src',`${drawnImages[0]}` )
+        //         card.setAttribute('alt',`player2card`)
+                
+        //         drawnImages.shift()
+        //         drawnValues.shift()
+            
+            
+        //         player2.append(card)
+            
+                // first thought, store the value of the pile on the site and reference that , but i may not have to . once i have the code of the card, i can use the value?
+            })   
 
-            draw1.append(draw1butt)
-            draw2.append(draw2butt)
-            player1.appendChild(draw1)
-            player2.appendChild(draw2)
+            // draw1.append(draw1butt)
+            // draw2.append(draw2butt)
+            // player1.appendChild(draw1)
+            // player2.appendChild(draw2)
             })
         
             .catch((error)=>console.log(error))
@@ -149,9 +149,26 @@ fetch(`${BASE}${tempDeck}${shuffle}`)
     })
     .catch((error)=>console.log(error))
 
-    
+
+
+// next step. add hidden to draw buttons.so that when player 1 draws, player 2 can't , and vice versa. 
+// new game button should refresh the form, if clicked more than the first time. 
+// append back of image
+    // set size the back of card to match front of card
+    // set toggle to cards so that they can flip when clicked. 
+// when the form is submitted should create an h2 with the value of name. throw error if no name is entered. 
+// if statements for value of Q,J, and K. 
+// total value after flipped. display value .
+
     
 })
+
+function addToggle(){
+    const images = document.querySelectorAll('img')
+
+    images.setAttribute
+}
+
 
 // const d1 = document.querySelector('draw1button')
 // const d2 = document.querySelector('draw2button')

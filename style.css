@@ -1,26 +1,29 @@
 body{
+    display: grid;
     text-align: center;
+    grid-template-rows: 1fr 1fr;
     
 }
 main{
     display: grid;
     grid-template-columns: 1fr 1fr;
     background-color: black;
-    height: 500px;
+    height: auto;
     
 }
 .player1{
-    display: grid;
-
+    display: inline;
+    width: auto;
     border: 10px solid pink;
     background-color: bisque;
 }
 .player2{
-    display: grid;
+    display: inline;
     border: 10px solid green;
     background-color: blue;
+    width: auto;
 }
-input{
+#newGame input{
     display: grid;
     color: blue;
     margin: auto;
@@ -29,4 +32,9 @@ input{
     font-size: larger;
     margin-top: 10px;
     
+}
+
+img{
+    height: 314px;
+    width: 226px;
 }
