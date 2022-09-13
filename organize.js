@@ -25,6 +25,8 @@ const p2name = document.querySelector('#p2name')
 const nameOne = document.querySelector('#nameOne')
 const nameTwo = document.querySelector('#nameTwo')
 
+let newGameCount = 0
+
 
 let drawnImages = []
 let drawnValues = []
@@ -33,7 +35,11 @@ let drawnValues = []
 let tempDeck = "qr98ugy0plse"
 
 newGame.addEventListener(("submit"), (event)=>{
-    event.preventDefault()
+    if(newGameCount  === 0){
+
+        event.preventDefault()
+        newGameCount++
+    }
 // console.log(`${BASE}${deckID}${firstDraw}`)
 
 // this fetch adds aces to junk pile
