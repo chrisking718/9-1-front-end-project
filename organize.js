@@ -41,15 +41,15 @@ let tempDeck = "qr98ugy0plse"
 
 newGame.addEventListener(("submit"), (event)=>{
     if(newGameCount  === 0){
-
+        alert("Click on Card to See What You Got!")
         event.preventDefault()
         newGameCount++
     }
 // console.log(`${BASE}${deckID}${firstDraw}`)
 
-setTimeout(addTotalButton,10000)
+setTimeout(addTotalButton,7000)
 
-alert("Click on Card to See What You Got!")
+
 
 
 // this fetch adds aces to junk pile
