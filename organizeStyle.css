@@ -1,3 +1,4 @@
+
 body{
     display: grid;
     text-align: center;
@@ -74,20 +75,33 @@ h3{
     margin-top: -55px;
 }
 
-body a{
+
+#rules{
+    font-size: x-large;
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+    margin-top: -85px;
+    font-family: "Architects Daughter";
+}
+
+#linked{
     font-size: x-large;
     width: fit-content;
     height: fit-content;
     margin: auto;
     margin-top: -5px;
-    font:cursive bolder  x-large  ;
+    font-family: "Architects Daughter";
+    transition-property: font-size;
+    transition-duration: 2s;
 }
-body a:hover{
+#linked:hover{
     background-color: gold;
+    font-size: xx-large;
     
 }
 
-body a:visited{
+#linked:visited{
     color: blue;
 }
 
@@ -108,18 +122,33 @@ body a:visited{
     h1{
         font-size: large;
     }
-    body a{
+    #linked{
+        display: grid;
+        
         font-size: medium;
+        
+    }
+
+    #linked:hover{
+        background-color: rgb(216, 152, 225);
+        font-size: large;
+        
+    }
+
+    #rules{
+        font-size: medium;
+        margin-top: -40px;
+        display: grid;
     }
     #newGame input{
         width: 30%;
 
     }
     .winnerBox{
-        margin-top: -45px;
-        font-size: x-large;
+        margin-top: -15px;
+        font-size: large;
         text-decoration: underline solid seagreen;
 
     }
-    .player1
+    
 }

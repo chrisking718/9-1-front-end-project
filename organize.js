@@ -39,6 +39,17 @@ let drawnValues = []
 
 let tempDeck = "qr98ugy0plse"
 
+function closeWindow(){
+    close()
+}
+
+if (confirm("Welcome to My Front End Project\n Click OK to Proceed")) {
+    
+  } else {
+    closeWindow();
+  }
+
+
 newGame.addEventListener(("submit"), (event)=>{
     if(newGameCount  === 0){
         alert("Click on Card to See What You Got!")
@@ -82,7 +93,7 @@ fetch(`${BASE}${tempDeck}${shuffle}`)
                     card.classList.toggle('back')
                     // Contains returns boolean classList contains class
                         if(card.classList.contains('back')){
-                        card.src = "https://static01.nyt.com/images/2016/09/28/us/28xp-pepefrog/28xp-pepefrog-articleLarge.jpg?quality=75&auto=webp"
+                        card.src = "https://static01.nyt.com/images/2016/09/28/us/28xp-pepefrog/28xp-pepefrog-articleLarge.jpg"
                         } else {
                         card.src = drawnImages[w]
                         }
