@@ -39,14 +39,12 @@ let drawnValues = []
 
 let tempDeck = "qr98ugy0plse"
 
-function closeWindow(){
-    close()
-}
+
 
 if (confirm("Welcome to My Front End Project\n Click OK to Proceed")) {
     
   } else {
-    closeWindow();
+    
   }
 
 
