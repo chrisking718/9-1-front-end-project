@@ -4,6 +4,10 @@
 
 I will create a Highest Draw Game application using the Deck of Cards API
 
+### Deployed URL
+
+https://chrisking718.github.io/9-1-front-end-project/
+
 ### User Stories
 
 - As a User, when the page is loaded, an alert will pop up saying welcome to the author's front end project. I am instructed to press ok to proceed.
